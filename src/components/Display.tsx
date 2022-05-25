@@ -1,6 +1,10 @@
 import "./Display.css";
 
-const Display = (props) => (
+type DisplayProps = {
+    value: string
+}
+
+const Display = (props: DisplayProps) => (
     <div className="component-display">
         <div>{props.value}</div>
     </div>

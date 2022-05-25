@@ -1,11 +1,13 @@
 import "./Button.css";
 
-// name: PropTypes.string,
-// orange: PropTypes.bool,
-// wide: PropTypes.bool,
-// clickHandler: PropTypes.func,
+type ButtonProps = {
+    name: string,
+    orange?: boolean | undefined,
+    wide?: boolean | undefined,
+    clickHandler: Function,
+}
 
-const Button = (props) => {
+const Button = (props: ButtonProps) => {
     const handleClick = () => {
         props.clickHandler(props.name);
     };

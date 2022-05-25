@@ -2,8 +2,12 @@ import Button from "./Button";
 
 import "./ButtonPanel.css";
 
-const ButtonPanel = (props) => {
-    const handleClick = (buttonName) => {
+type ButtonPanelProps = {
+    clickHandler: Function
+}
+
+const ButtonPanel = (props: ButtonPanelProps) => {
+    const handleClick = (buttonName: string) => {
         props.clickHandler(buttonName);
     };
 
