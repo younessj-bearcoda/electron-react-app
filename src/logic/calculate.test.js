@@ -6,7 +6,7 @@ chai.config.truncateThreshold = 0;
 
 const expect = chai.expect;
 
-function pressButtons(buttons) {
+const pressButtons = buttons => {
     const value = {};
     buttons.forEach(button => {
         Object.assign(value, calculate(value, button));
@@ -18,20 +18,21 @@ function pressButtons(buttons) {
         }
     });
     return value;
-}
+};
 
-function expectButtons(buttons, expectation) {
+const expectButtons = (buttons, expectation) => {
     expect(pressButtons(buttons)).to.deep.equal(expectation);
-}
+};
 
-function test(buttons, expectation, only = false) {
+const test = (buttons, expectation, only = false) => {
     const func = only ? it.only : it;
+
     func(`buttons ${buttons.join(",")} -> ${JSON.stringify(expectation)}`, () => {
         expectButtons(buttons, expectation);
     });
-}
+};
 
-describe("calculate", function() {
+describe("calculate", () => {
     test(["6"], { next: "6" });
 
     test(["6", "6"], { next: "66" });
