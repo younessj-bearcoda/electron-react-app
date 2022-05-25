@@ -1,4 +1,4 @@
-import "./Display.css";
+import "./Display.scss";
 
 type DisplayProps = {
     value: string

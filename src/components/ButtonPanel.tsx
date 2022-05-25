@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-import "./ButtonPanel.css";
+import "./ButtonPanel.scss";
 
 type ButtonPanelProps = {
     clickHandler: Function
