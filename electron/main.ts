@@ -1,9 +1,8 @@
 const path = require('path');
-
-const { app, BrowserWindow } = require('electron');
+import { app, BrowserWindow } from "electron";
 const isDev = require('electron-is-dev');
 
-function createWindow() {
+const createWindow = () => {
     // Create the browser window.
     const win = new BrowserWindow({
         width: 400,
@@ -29,7 +28,7 @@ function createWindow() {
             mode: 'detach'
         });
     }
-}
+};
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
